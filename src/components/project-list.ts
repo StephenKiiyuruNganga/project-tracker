@@ -1,8 +1,8 @@
-import { autobind } from "../decorators/autobind.js"
-import { DragTarget } from "../models/drag-drop.js"
-import { Project, projectState, ProjectStatus } from "../state/project-state.js"
-import { Component } from "./base-components.js"
-import { ProjectItem } from "./project-item.js"
+import { autobind } from "../decorators/autobind"
+import { DragTarget } from "../models/drag-drop"
+import { Project, projectState, ProjectStatus } from "../state/project-state"
+import { Component } from "./base-components"
+import { ProjectItem } from "./project-item"
 
 // ProjectList Class
 export class ProjectList
@@ -38,7 +38,7 @@ export class ProjectList
   }
 
   @autobind
-  dragLeaveHandler(event: DragEvent) {
+  dragLeaveHandler(_: DragEvent) {
     const listEl = this.element.querySelector("ul")!
     listEl.classList.remove("droppable")
   }
