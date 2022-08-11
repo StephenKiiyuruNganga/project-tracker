@@ -1,10 +1,12 @@
 const path = require("path")
 
 module.exports = {
+  mode: "development",
   entry: "./src/app.ts",
   output: {
     filename: "bundle.js", // OR "bundle.[contenthash].js" to tell webpack to create hashed bundles that help the browser with cache-ing
     path: path.resolve(__dirname, "dist"), // tell webpack to create an absolute path to the output folder which is the dist folder
+    publicPath: "dist",
   },
   devtool: "inline-source-map", // tell wepack to connect some generated sourcemaps with the bundle it produces
   // tell webpack how to deal with typescript files
@@ -19,5 +21,12 @@ module.exports = {
   },
   resolve: {
     extensions: [".ts", ".js"],
+  },
+  devServer: {
+    // static: {
+    //   directory: path.join(__dirname, "dist"),
+    // },
+    // compress: true,
+    port: 9000,
   },
 }
